@@ -30,10 +30,9 @@ extension Book{
 extension Image{
     init?(title:String){
         guard let letter = title.first,
-              //조건부 바인딩에서 symbolName처럼 optional 이 아닌 경우 "case"를 추가하면 에러 해결
-       case let symbolName = "\(letter.lowercased()).square",
-              UIImage(systemName: symbolName) != nil
-        else { return nil }
+    //조건부 바인딩에서 symbolName처럼 optional 이 아닌 경우 "case"를 추가하면 에러 해결
+      case let symbolName = "\(letter.lowercased()).square",
+      UIImage(systemName: symbolName) != nil else { return nil }
         
         self.init(systemName:symbolName)
     }
